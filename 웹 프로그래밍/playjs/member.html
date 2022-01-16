@@ -1,0 +1,124 @@
+ <html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <script>
+      function show(){
+        var form = document.myform;
+        var id = form["id"].value;
+        var name = form["name"].value;
+        var ps = form["passwd"].value;
+        var gender = form["gender"].value;
+        var cell = form["phone1"].value + form["phone2"].value + form["phone3"].value;
+        var address = form["address"].value;
+        var hobby = "";
+
+
+
+        var exp1 = /[0-9]+/;
+        var exp2 = /[a-zA-Z]+/;
+        var exp3 = /[@#$]+/;
+        var exp4 = /^[!%^&*|\\\'\";:\/?]+/;
+        for(var i=1; i<=4;i++)
+        {
+          if(form["hobby"+i].checked)
+            hobby += form["hobby"+i].value + " ";
+        }
+        if((id.length == 0) || (name.length == 0) || (ps.length == 0) ) {
+          alert("필수 입력 칸이 비어 있습니다.");
+          return false;
+        }
+        else if(id.length < 6) {
+          alert("id의 길이가 짧습니다.");
+          return false;
+        }
+
+        else if(ps.length < 6) {
+          alert("ps의 길이가 짧습니다.");
+        }
+
+        else if(!exp1.test(ps)) {
+          alert("비밀번호에 숫자가 포함되어 있지 않습니다.");
+        }
+
+
+        else if(!exp2.test(ps)) {
+          alert("비밀번호에 문자가 포함되어 있지 않습니다.");
+        }
+
+        else if(!exp3.test(ps)) {
+          alert("비밀번호에 특수문자 @ # $가 포함되어 있지 않습니다.");
+        }
+
+        else if(exp4.test(ps)) {
+          alert("비밀번호에 허용되지 않은 특수문자가 포함되어 있습니다.");
+        }
+
+        else{
+          var str = id + "\n" + name + "\n" + gender + "\n";
+          str += cell + "\n" + address + "\n" + hobby;
+          alert(str);
+      }
+      }
+ </script>
+ </head>
+ <body>
+ <h2>회원가입</h2>
+ <form name="myform" method="post">
+ <input type="hidden" name="title" value="회원가입양식"> 
+ <table border="1" width="640" cellspacing="1" cellpadding="4">
+ <tr>
+   <td align="right">아이디:</td>
+   <td><input type="text" size="15" maxlength="12" name="id" value="guest"></td>
+ </tr>
+ <tr>
+   <td align="right" >이름:</td>
+   <td><input type="text" size="15" maxlength="12" name="name"></td>
+ </tr>
+ <tr>
+   <td align="right">비밀번호:</td>
+   <td><input type="password" size="15" maxlength="10" name="passwd"></td>
+ </tr>
+ <tr>
+   <td align="right">성별:</td>
+   <td><input type="radio" name="gender" value="M" checked>남
+       <input type="radio" name="gender" value="F">여</td>
+ </tr>
+ <tr>
+   <td align="right">휴대전화:</td>
+   <td><select name="phone1">
+     <option>선택</option>
+     <option value="010">010</option>
+     <option value="011">011</option>
+     <option value="017">017</option>
+     </select> - 
+   <input type="text" size="4" name="phone2" maxlength="4"> -
+   <input type="text" size="4" name="phone3" maxlength="4"></td>
+ </tr>
+ <tr>
+   <td align="right">주소:</td>
+   <td><input type="text" size="50" name="address"></td>
+ </tr>
+ <tr>
+   <td align="right">취미:</td>
+   <td>
+   <input type="checkbox" name="hobby1" value="음악감상">음악감상 &nbsp; 
+   <input type="checkbox" name="hobby2" value="독서" >독서 &nbsp; 
+   <input type="checkbox" name="hobby3" value="쇼핑">쇼핑 &nbsp; 
+   <input type="checkbox" name="hobby4" value="운동">운동
+   </td>
+ </tr>
+ <tr>
+   <td align="right">자기소개:</td>
+   <td><textarea name="intro" rows="5" cols="60"></textarea></td>
+ </tr>
+ </table>
+ <br>
+ <table border="0" width="640">
+ <tr><td align="center">
+   <input type="submit" value="확인" onclick="show();">
+   <input type="reset" value="다시 작성"></td>
+ </tr>
+ </table>
+ </form>
+ </body>
+ </html>
