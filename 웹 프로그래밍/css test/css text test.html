@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> HTML5 Basic Page</title>
+	<style>
+		*{font-family:'맑은 고딕', Gothic, sans-serif; margin: 0; padding: 0;}
+		body{background-color:#E6F6F6; width : 960px; margin: 0 auto;}
+		a:link {text-decoration: none;}
+		li{list-style: none;}
+		article{padding: 0 10px 20px 10px; border-bottom:1px solid #C9C9C9;}
+
+		#page-wrapper{background-color: white; margin-top:40px; height: body.height; padding:10px 20px;}
+
+
+		.master-title{font-size: 30px; color:#191919;}
+
+		.master-description{font-size: 15px; color:#383838;}
+
+		.article-title{font-size: 25px;}
+
+		.article-date{font-size:13px;}
+
+		.article-body{font-size:14px;}
+
+		.aside-list li a{font-size: 13px; color:orange;}
+		.aside-list > h3{font-size:15px; color:blue;}
+
+		.outer-main-item{padding: 5px 20px;
+		 	height : 30px;
+		 	width: 80px;
+		 	display: block;
+		 	text-align: center;
+		 	line-height:30px;}
+		 .pull-right{padding : 7px 7px; float: right;}
+		 .pull-left{height:40px; float: left;}
+		 .pull-left li{float:left;}
+		 .input-search{display : block; height: 24px; width: 120px; padding-left: 10px; border: 1px solid #CCCCCC; border-radius: 15px 0 0 15px;}
+		 .input-search-submit{display: block; height: 26px; width: 50px;border-radius: 0 15px 15px 0; border: 1px solid #CCCCCC;}
+		 .article-header{padding: 20px 0;}
+		 .outer-menu-item{float:left;}
+		
+		#main-header{padding:40px 50px;}
+		#main-section{width :710px;float:left;}
+		#main-aside{width:200px;float:left;}
+		#main-navigation li:hover {background-color: black; color: white;}
+		#main-navigation input[type = text]{float:left}:focus {background-color: yellow; outline: 0;}
+		#main-navigation{margin-bottom:20px; border-top:1px solid #C9C9C9; border-bottom:1px solid #C9C9C9; height: 40px;}
+		#content{overflow: hidden;}
+
+
+	</style>
+</head>
+
+<body>
+	<div id = "page-wrapper">
+		<header id = "main-header">
+			<h1 class = "master-title">웹 프로그래밍 완전 정복</h1>
+			<h2 class = "master-description">건국대학교 소프트웨어 학과</h2>
+		</header>
+		<nav id = "main-navigation">
+			<div class ="pull-left">
+				<li class = "outer-main-item">
+					HTML5
+				
+				</li>
+				<li class = "outer-main-item">
+					CSS3
+				
+				</li>
+				<li class = "outer-main-item">
+					JAVA
+				
+				</li>
+
+			</div>
+			<div class = "pull-right">
+				<form>
+					<input type=text class = "input-search" />
+					<input type=submit class= "input-search-submit" value = "검색" />
+				</form>
+			</div>
+		</nav>
+		<div id = "content">
+			<section id = "main-section">
+				<article>
+				<div class = "article-header">
+					<h1 class = "article-title">가나다라</h1>
+					<p class = "article-date">2019-03-14</p>
+				</div>
+				<div class = "article-body">
+					<img border = "0" src = "http://placehold.it/430X280",
+					width = "430" , height = "280">
+					<p>abcdefg</p>
+				</div>
+				</article>
+
+				<article>
+				<div class = "article-header">
+					<h1 class = "article-title">마바사</h1>
+					<p class = "article-date">2020-03-12</p>
+				</div>
+				<div class = "article-body">
+					<img border = "0" src = "http://placehold.it/430X280",
+					width = "430" , height = "280">
+					<p>hijklmnop</p>
+				</div>
+				</article>
+			</section>
+			<aside id = "main-aside">
+				<div class = "aside-list">
+					<h3>카테고리</h3>
+					<li><a href = "#">s</a></li>
+					<li><a href = "#">a</a></li>
+					<li><a href = "#">n</a></li>
+					<h3>catalog</h3>
+					<li><a href = "#">c</a></li>
+					<li><a href = "#">d</a></li>
+					<li><a href = "#">e</a></li>
+				</div>
+			</aside>
+		</div>
+		<footer id = "main-footer"><a href = "#">Create by 신희을</a></footer>
+	</div>
+
+</body>
+</html>
